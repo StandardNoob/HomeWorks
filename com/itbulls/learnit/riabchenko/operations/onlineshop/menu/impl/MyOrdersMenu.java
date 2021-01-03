@@ -1,6 +1,7 @@
 package com.itbulls.learnit.riabchenko.operations.onlineshop.menu.impl;
 
 import com.itbulls.learnit.riabchenko.operations.onlineshop.config.ApplicationContext;
+import com.itbulls.learnit.riabchenko.operations.onlineshop.enteties.Order;
 import com.itbulls.learnit.riabchenko.operations.onlineshop.menu.Menu;
 import com.itbulls.learnit.riabchenko.operations.onlineshop.services.OrderManagementService;
 import com.itbulls.learnit.riabchenko.operations.onlineshop.services.impl.DefaultOrderManagementService;
@@ -17,12 +18,34 @@ public class MyOrdersMenu implements Menu {
 
 	@Override
 	public void start() {
-		// <write your code here>
+		
+		printMenuHeader();
+		if (context.getLoggedInUser() == null) {
+			System.out.println("Please, log in or create new account to see list of your orders");
+			new MainMenu().start();
+			return;
+		} else {
+			printUserOrdersToConsole();
+		}
+		new MainMenu().start();
+	}
+
+	private void printUserOrdersToConsole() {
+		Order[] loggedInUserOrders = orderManagementService.getOrdersByUserId(context.getLoggedInUser().getId());
+
+		if (loggedInUserOrders == null || loggedInUserOrders.length == 0) {
+			System.out.println("Unfortunately, you don’t have any orders yet. "
+					+ "Navigate back to main menu to place a new order");
+		} else {
+			for (Order order : loggedInUserOrders) {
+				System.out.println(order);
+			}
+		}
 	}
 
 	@Override
 	public void printMenuHeader() {
-		// <write your code here>		
+		System.out.println("*** MY ORDERS ***");
 	}
 
 }

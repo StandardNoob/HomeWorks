@@ -7,7 +7,7 @@ import java.util.List;
 public class Account {
 	private int id;
 	private Transaction[] transactions;
-	private int SIZE_OF_TRANSACTION_ARR = 10;
+	private static final int SIZE_OF_TRANSACTION_ARR = 10;
 
 	{
 		transactions = new Transaction[SIZE_OF_TRANSACTION_ARR];
@@ -30,8 +30,7 @@ public class Account {
 	}
 
 	public Transaction[] getTransactions() {
-		List<Transaction> arr = Arrays.asList(transactions);
-		ArrayList<Transaction> listOfTransaction = new ArrayList<>(arr);
+		ArrayList<Transaction> listOfTransaction = new ArrayList<>(Arrays.asList(transactions));
 		for (Transaction transaction : transactions) {
 			if (transaction != null) {
 				listOfTransaction.add(transaction);
@@ -77,8 +76,7 @@ public class Account {
 	}
 
 	private void addTransaction(Transaction transaction) {
-		List<Transaction> arr = Arrays.asList(transactions);
-		ArrayList<Transaction> listOfTransaction = new ArrayList<>(arr);
+		ArrayList<Transaction> listOfTransaction = new ArrayList<>(Arrays.asList(transactions));
 		if (transaction == null) {
 			return;
 		}
