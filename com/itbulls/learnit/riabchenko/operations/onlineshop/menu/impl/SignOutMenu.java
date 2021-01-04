@@ -20,6 +20,7 @@ public class SignOutMenu implements Menu {
 
 	@Override
 	public void printMenuHeader() {
+		System.out.println();
 		System.out.println("***** Sign Out *****");
 		System.out.println("Have a nice day! Look forward to welcoming back!");
 	}

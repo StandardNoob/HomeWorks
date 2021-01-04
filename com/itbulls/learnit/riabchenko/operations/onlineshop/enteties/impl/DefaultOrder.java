@@ -45,8 +45,8 @@ public class DefaultOrder implements Order {
 
 	@Override
 	public String toString() {
-		return "Order [creditCardNumber=" + this.creditCardNumber + ", products="
-				+ Arrays.toString(this.products) + ", customerId=" + this.customerId + "]";
+		return "Order for cardholder number= " + this.creditCardNumber +", Products= "
+				+ Arrays.toString(this.products);
 	}
 
 }
