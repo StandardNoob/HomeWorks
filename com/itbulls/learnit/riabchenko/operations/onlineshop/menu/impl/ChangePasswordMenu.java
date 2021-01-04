@@ -25,6 +25,7 @@ public class ChangePasswordMenu implements Menu {
 
 	@Override
 	public void printMenuHeader() {
+		System.out.println();
 		System.out.println("***** CHANGE PASSWORD *****");
 		System.out.print("Enter a new password: ");		
 	}

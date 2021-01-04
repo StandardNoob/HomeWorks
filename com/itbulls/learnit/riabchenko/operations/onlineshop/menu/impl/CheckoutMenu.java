@@ -51,6 +51,7 @@ public class CheckoutMenu implements Menu {
 
 	@Override
 	public void printMenuHeader() {
+		System.out.println();
 		System.out.println("***** CHECKOUT *****");
 		System.out.print("Enter your credit card number without spaces and press enter if you confirm purchase: ");
 	}

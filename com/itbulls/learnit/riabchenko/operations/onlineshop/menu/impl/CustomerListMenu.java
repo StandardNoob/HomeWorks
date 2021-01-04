@@ -22,6 +22,8 @@ public class CustomerListMenu implements Menu {
 		if (users.length == 0) {
 			System.out.println("Unfortunately, there are no customers.");
 		} else {
+			System.out.println();
+			System.out.println("Here is a list of all users: ");
 			for (User user : users) {
 				System.out.println(user);
 			}
@@ -31,6 +33,7 @@ public class CustomerListMenu implements Menu {
 
 	@Override
 	public void printMenuHeader() {
+		System.out.println();
 		System.out.println("***** USERS *****");
 	}
 

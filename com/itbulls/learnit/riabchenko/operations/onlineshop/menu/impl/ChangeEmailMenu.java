@@ -25,6 +25,7 @@ public class ChangeEmailMenu implements Menu {
 
 	@Override
 	public void printMenuHeader() {
+		System.out.println();
 		System.out.println("***** CHANGE EMAIL *****");
 		System.out.print("Enter a new email: ");
 	}

@@ -45,6 +45,7 @@ public class MyOrdersMenu implements Menu {
 
 	@Override
 	public void printMenuHeader() {
+		System.out.println();
 		System.out.println("*** MY ORDERS ***");
 	}
 

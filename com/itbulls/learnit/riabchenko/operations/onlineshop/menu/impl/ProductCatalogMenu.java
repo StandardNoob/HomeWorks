@@ -53,8 +53,9 @@ public class ProductCatalogMenu implements Menu {
 				Product productToAddToCart = fetchProduct(userInput);
 
 				if (productToAddToCart == null) {
-					System.out.println(
-							"Please, enter product ID if you want to add product to cart. Or enter ‘checkout’ if you want to proceed with checkout. Or enter ‘menu’ if you want to navigate back to the main menu.");
+					System.out.println("Please, enter product ID if you want to add product to cart."
+							+ System.lineSeparator() + "Or enter ‘checkout’ if you want to proceed with checkout."
+							+ System.lineSeparator() + "Or enter ‘menu’ if you want to navigate back to the main menu.");
 					continue;
 				}
 
@@ -87,14 +88,18 @@ public class ProductCatalogMenu implements Menu {
 
 	private void processAddToCart(Product productToAddToCart) {
 		context.getSessionCart().addProduct(productToAddToCart);
+		System.out.println();
 		System.out.printf(
-				"Product %s has been added to your cart. " + "If you want to add a new product - enter the product id. "
+				"Product %s has been added to your cart. " + System.lineSeparator()
+						+ "If you want to add a new product - enter the product id. " + System.lineSeparator()
 						+ "If you want to proceed with checkout - enter word " + "‘checkout’ to console %n",
 				productToAddToCart.getProductName());
+		System.out.println();
 	}
 
 	@Override
 	public void printMenuHeader() {
+		System.out.println();
 		System.out.println("***** PRODUCT CATALOG *****");
 		System.out.println(
 				"Enter product id to add it to the cart or ‘menu’ if you want to navigate back to the main menu");
