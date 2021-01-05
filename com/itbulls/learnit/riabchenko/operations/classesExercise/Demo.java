@@ -21,6 +21,9 @@ public class Demo {
 		bookService.filterBooksByAuthor(new Author(2, "William", "Wilson"), books);
 		bookService.filterBooksByPublisher(new Publisher(1, "Publisher_1"), books);
 		bookService.filterBooksAfterSpecifiedYear(1992, books);
+		for (Book book : books) {
+			System.out.println(book);
+		}
 
 	}
 

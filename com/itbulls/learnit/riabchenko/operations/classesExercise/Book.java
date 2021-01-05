@@ -97,9 +97,9 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", name=" + name + ", authors=" + Arrays.toString(authors) + ", publisher="
-				+ publisher + ", publishingYear=" + publishingYear + ", amountOfPages=" + amountOfPages + ", price="
-				+ price + ", coverType=" + coverType + "]";
+		return "Book ID= " + id + ", Name= " + name + ", Authors= " + Arrays.toString(authors) + ", Publisher= "
+				+ publisher + ", Publishing Year= " + publishingYear + ", Amount Of Pages= " + amountOfPages + ", Price= "
+				+ price + ", coverType=" + coverType;
 	}
 	
 
