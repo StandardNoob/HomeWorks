@@ -32,7 +32,7 @@ public class Publisher {
 
 	@Override
 	public String toString() {
-		return "Publisher [id=" + id + ", publisherName=" + publisherName + "]";
+		return "Publisher ID= " + id + ", Publisher Name= " + publisherName;
 	}
 	
 

@@ -30,7 +30,7 @@ public class Account {
 	}
 
 	public Transaction[] getTransactions() {
-		ArrayList<Transaction> listOfTransaction = new ArrayList<>(Arrays.asList(transactions));
+		ArrayList<Transaction> listOfTransaction = new ArrayList<>();
 		for (Transaction transaction : transactions) {
 			if (transaction != null) {
 				listOfTransaction.add(transaction);
@@ -86,7 +86,7 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [id=" + id + "]";
+		return "Account ID= " + id;
 	}
 
 	public class Transaction {
@@ -142,9 +142,8 @@ public class Account {
 
 		@Override
 		public String toString() {
-			return "Transaction [accountFrom=" + accountFrom + ", accountTo=" + accountTo + ", moneyAmount="
-					+ moneyAmount + ", operation=" + operation + "]";
+			return "Transaction: Account From= " + accountFrom + ", Account To= " + accountTo + ", moneyAmount="
+					+ moneyAmount + ", Operation= " + operation;
 		}
-
 	}
 }
