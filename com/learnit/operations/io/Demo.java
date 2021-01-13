@@ -11,19 +11,17 @@ public class Demo {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
 		// Console text editor
-		TextEditor textEditor = new TextEditor(new File(
-				"C:\\Users\\sasha\\OneDrive\\eclipse-workspace\\LearnIT\\src\\com\\learnit\\operations\\io\\textEditor.txt"));
+		TextEditor textEditor = new TextEditor(new File("src\\com\\learnit\\operations\\io\\textEditor.txt"));
 		textEditor.start();
 		textEditor.printToConsole();
 
 		// Console application that return value by key from config file:
-		ConfigReader configReader = new ConfigReader(Paths.get(
-				"C:\\Users\\sasha\\OneDrive\\eclipse-workspace\\LearnIT\\src\\com\\learnit\\operations\\io\\config.txt"));
+		ConfigReader configReader = new ConfigReader(Paths.get("src\\com\\learnit\\operations\\io\\config.txt"));
 		System.out.println(configReader.getValueFromConfigMap(configReader.getConfig(), "database.passwor"));
 
 		// Get the number of files with the extension
 		FilesCounter filesCounter = new FilesCounter();
-		Path path = Paths.get("C:\\Users\\sasha\\OneDrive\\eclipse-workspace\\LearnIT");
+		Path path = Paths.get(".");
 		String extension = ".java";
 		System.out.println(filesCounter.getNumberOfFilesWithExtension(path, extension));
 	}

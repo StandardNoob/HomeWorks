@@ -11,10 +11,10 @@ public class LambdaExpressions {
 		String userInput = sc.nextLine();
 		String[] strings = userInput.split("\\s");
 		Arrays.sort(strings, LambdaExpressions::compareStrings);
-		// Arrays.sort(strings, (s1,s2) -> s2.length() - s1.length());
+//		 Arrays.sort(strings, (s1,s2) -> s2.length() - s1.length());
 
 		for (String string : strings) {
-			System.out.println(string);
+			System.out.print(string + " ");
 		}
 	}
 
