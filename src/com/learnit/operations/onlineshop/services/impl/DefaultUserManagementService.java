@@ -2,6 +2,7 @@ package com.learnit.operations.onlineshop.services.impl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.learnit.operations.onlineshop.enteties.Order;
 import com.learnit.operations.onlineshop.enteties.User;
@@ -13,14 +14,12 @@ public class DefaultUserManagementService implements UserManagementService {
 	private static final String EMPTY_EMAIL_ERROR_MESSAGE = "You have to input email to register. Please, try one more time";
 	private static final String NO_ERROR_MESSAGE = "";
 
-	private static final int DEFAULT_USERS_CAPACITY = 10;
-
 	private static DefaultUserManagementService instance;
 
-	private User[] users;
+	private List<User> users;
 
 	{
-		users = new User[DEFAULT_USERS_CAPACITY];
+		users = new ArrayList<User>();
 	}
 
 	private DefaultUserManagementService() {
@@ -35,9 +34,7 @@ public class DefaultUserManagementService implements UserManagementService {
 		if (errorMassege != null && !errorMassege.isEmpty()) {
 			return errorMassege;
 		}
-		ArrayList<User> listOfUsers = new ArrayList<>(Arrays.asList(users));
-		listOfUsers.add(user);
-		users = listOfUsers.toArray(User[]::new);
+		users.add(user);
 		return NO_ERROR_MESSAGE;
 	}
 
@@ -61,15 +58,14 @@ public class DefaultUserManagementService implements UserManagementService {
 	}
 
 	@Override
-	public User[] getUsers() {		
-		ArrayList<User> newlist = new ArrayList<>();
+	public List<User> getUsers() {
+		List<User> newlist = new ArrayList<>();
 		for (User user : users) {
 			if (user != null) {
 				newlist.add(user);
 			}
 		}
-		User[] listOfUsersArr = newlist.toArray(User[]::new);
-		return listOfUsersArr;
+		return newlist;
 	}
 
 	@Override
@@ -83,6 +79,6 @@ public class DefaultUserManagementService implements UserManagementService {
 	}
 
 	void clearServiceState() {
-		users = new User[DEFAULT_USERS_CAPACITY];
+		users = new ArrayList<User>();
 	}
 }

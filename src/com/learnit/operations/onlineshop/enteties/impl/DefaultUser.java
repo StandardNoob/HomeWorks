@@ -48,8 +48,8 @@ public class DefaultUser implements User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + this.id + ", firstName=" + this.firstName + ", lastName=" + this.lastName
-				+ ", password=" + this.password + ", email=" + this.email + "]";
+		return "User [id=" + this.id + ", firstName=" + this.firstName + ", lastName=" + this.lastName + ", password="
+				+ this.password + ", email=" + this.email + "]";
 	}
 
 	@Override

@@ -1,5 +1,7 @@
 package com.learnit.operations.onlineshop.menu.impl;
 
+import java.util.List;
+
 import com.learnit.operations.onlineshop.config.ApplicationContext;
 import com.learnit.operations.onlineshop.enteties.User;
 import com.learnit.operations.onlineshop.menu.Menu;
@@ -18,8 +20,8 @@ public class CustomerListMenu implements Menu {
 
 	@Override
 	public void start() {
-		User[] users = userManagementService.getUsers();
-		if (users.length == 0) {
+		List<User> users = userManagementService.getUsers();
+		if (users.size() == 0) {
 			System.out.println("Unfortunately, there are no customers.");
 		} else {
 			System.out.println();
