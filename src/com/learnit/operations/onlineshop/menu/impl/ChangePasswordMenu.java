@@ -6,9 +6,9 @@ import com.learnit.operations.onlineshop.config.ApplicationContext;
 import com.learnit.operations.onlineshop.menu.Menu;
 
 public class ChangePasswordMenu implements Menu {
-	
+
 	private ApplicationContext context;
-	
+
 	{
 		context = ApplicationContext.getInstance();
 	}
@@ -27,7 +27,7 @@ public class ChangePasswordMenu implements Menu {
 	public void printMenuHeader() {
 		System.out.println();
 		System.out.println("***** CHANGE PASSWORD *****");
-		System.out.print("Enter a new password: ");		
+		System.out.print("Enter a new password: ");
 	}
 
 }

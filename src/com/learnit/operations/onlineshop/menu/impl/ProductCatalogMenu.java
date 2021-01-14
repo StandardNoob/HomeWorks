@@ -1,5 +1,6 @@
 package com.learnit.operations.onlineshop.menu.impl;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.learnit.operations.onlineshop.config.ApplicationContext;
@@ -55,7 +56,8 @@ public class ProductCatalogMenu implements Menu {
 				if (productToAddToCart == null) {
 					System.out.println("Please, enter product ID if you want to add product to cart."
 							+ System.lineSeparator() + "Or enter ‘checkout’ if you want to proceed with checkout."
-							+ System.lineSeparator() + "Or enter ‘menu’ if you want to navigate back to the main menu.");
+							+ System.lineSeparator()
+							+ "Or enter ‘menu’ if you want to navigate back to the main menu.");
 					continue;
 				}
 
@@ -74,14 +76,22 @@ public class ProductCatalogMenu implements Menu {
 	}
 
 	private void printProductsToConsole() {
-		Product[] products = productManagementService.getProducts();
+		List<Product> products = productManagementService.getProducts();
 		for (Product product : products) {
 			System.out.println(product);
 		}
 	}
 
 	private Product fetchProduct(String userInput) {
-		int productIdToAddToCart = Integer.parseInt(userInput);
+		int productIdToAddToCart = 0;
+		try {
+			productIdToAddToCart = Integer.parseInt(userInput);
+		} catch (NumberFormatException e) {
+			productIdToAddToCart = 0;
+			System.out.println();
+			System.out.println("****PLEASE ENTER VALID DATA****");
+		}
+		
 		Product productToAddToCart = productManagementService.getProductById(productIdToAddToCart);
 		return productToAddToCart;
 	}

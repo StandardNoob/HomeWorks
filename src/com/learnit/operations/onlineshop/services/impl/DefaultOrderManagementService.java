@@ -2,18 +2,18 @@ package com.learnit.operations.onlineshop.services.impl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.learnit.operations.onlineshop.enteties.Order;
 import com.learnit.operations.onlineshop.services.OrderManagementService;
 
 public class DefaultOrderManagementService implements OrderManagementService {
-
-	private static final int DEFAULT_ORDER_CAPACITY = 10;
+	
 	private static DefaultOrderManagementService instance;
-	private Order[] orders;
+	private List<Order> orders;
 
 	{
-		orders = new Order[DEFAULT_ORDER_CAPACITY];
+		orders = new ArrayList<Order>();
 	}
 
 	public static OrderManagementService getInstance() {
@@ -24,39 +24,35 @@ public class DefaultOrderManagementService implements OrderManagementService {
 	}
 
 	@Override
-	public void addOrder(Order order) {		
-		ArrayList<Order> newList = new ArrayList<>(Arrays.asList(orders));		
+	public void addOrder(Order order) {				
 		if (order != null) {
-			newList.add(order);
-		}
-		orders = newList.toArray(Order[]::new);
+			orders.add(order);
+		}		
 	}
 
 	@Override
-	public Order[] getOrdersByUserId(int userId) {
+	public List<Order> getOrdersByUserId(int userId) {
 		ArrayList<Order> newList = new ArrayList<>();
 		for (Order order : orders) {
 			if (order != null && order.getCustomerId() == userId) {
 				newList.add(order);
 			}
-		}
-		Order[] listAfterSortArr = newList.toArray(Order[]::new);
-		return listAfterSortArr;
+		}		
+		return newList;
 	}
 
 	@Override
-	public Order[] getOrders() {		
+	public List<Order> getOrders() {		
 		ArrayList<Order> newlist = new ArrayList<>();
 		for (Order order : orders) {
 			if (order != null) {
 				newlist.add(order);
 			}
-		}
-		Order[] listOfOrdersArr = newlist.toArray(Order[]::new);
-		return listOfOrdersArr;
+		}		
+		return newlist;
 	}
 
 	void clearServiceState() {
-		orders = new Order[DEFAULT_ORDER_CAPACITY];
+		orders = new ArrayList<Order>();
 	}
 }

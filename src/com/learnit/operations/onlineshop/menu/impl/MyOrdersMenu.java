@@ -1,5 +1,7 @@
 package com.learnit.operations.onlineshop.menu.impl;
 
+import java.util.List;
+
 import com.learnit.operations.onlineshop.config.ApplicationContext;
 import com.learnit.operations.onlineshop.enteties.Order;
 import com.learnit.operations.onlineshop.menu.Menu;
@@ -17,8 +19,7 @@ public class MyOrdersMenu implements Menu {
 	}
 
 	@Override
-	public void start() {
-		
+	public void start() {		
 		printMenuHeader();
 		if (context.getLoggedInUser() == null) {
 			System.out.println("Please, log in or create new account to see list of your orders");
@@ -31,9 +32,9 @@ public class MyOrdersMenu implements Menu {
 	}
 
 	private void printUserOrdersToConsole() {
-		Order[] loggedInUserOrders = orderManagementService.getOrdersByUserId(context.getLoggedInUser().getId());
+		List<Order> loggedInUserOrders = orderManagementService.getOrdersByUserId(context.getLoggedInUser().getId());
 
-		if (loggedInUserOrders == null || loggedInUserOrders.length == 0) {
+		if (loggedInUserOrders == null || loggedInUserOrders.size() == 0) {
 			System.out.println("Unfortunately, you don’t have any orders yet. "
 					+ "Navigate back to main menu to place a new order");
 		} else {

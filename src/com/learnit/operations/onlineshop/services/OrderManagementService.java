@@ -1,13 +1,15 @@
 package com.learnit.operations.onlineshop.services;
 
+import java.util.List;
+
 import com.learnit.operations.onlineshop.enteties.Order;
 
 public interface OrderManagementService {
 
 	void addOrder(Order order);
 
-	Order[] getOrdersByUserId(int userId);
-	
-	Order[] getOrders();
+	List<Order> getOrdersByUserId(int userId);
+
+	List<Order> getOrders();
 
 }

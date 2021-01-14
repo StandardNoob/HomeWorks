@@ -12,6 +12,10 @@ public class DefaultProduct implements Product {
 	public DefaultProduct() {
 	}
 
+	public String getCategoryName() {
+		return categoryName;
+	}
+
 	public DefaultProduct(int id, String productName, String categoryName, double price) {
 		this.id = id;
 		this.productName = productName;
@@ -33,6 +37,11 @@ public class DefaultProduct implements Product {
 	@Override
 	public String getProductName() {
 		return this.productName;
+	}
+
+	@Override
+	public double getPrice() {
+		return this.price;
 	}
 
 }
