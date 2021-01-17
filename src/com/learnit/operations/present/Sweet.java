@@ -1,4 +1,4 @@
-package com.learnit.operations.oop;
+package com.learnit.operations.present;
 
 public abstract class Sweet {
 	private String name;
