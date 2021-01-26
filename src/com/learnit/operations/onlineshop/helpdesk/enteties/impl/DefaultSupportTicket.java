@@ -1,4 +1,4 @@
-package com.learnit.operations.onlineshop.helpdesk.impl;
+package com.learnit.operations.onlineshop.helpdesk.enteties.impl;
 
 import com.learnit.operations.onlineshop.helpdesk.enteties.Priority;
 import com.learnit.operations.onlineshop.helpdesk.enteties.RequestType;

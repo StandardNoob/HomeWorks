@@ -45,7 +45,7 @@ public class DefaultCart implements Cart {
 	}
 
 	public void clear() {
-		products = new ArrayList<Product>();
+		products.clear();
 	}
 
 }

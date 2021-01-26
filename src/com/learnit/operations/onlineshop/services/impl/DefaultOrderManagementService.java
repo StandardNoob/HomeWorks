@@ -1,7 +1,6 @@
 package com.learnit.operations.onlineshop.services.impl;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import com.learnit.operations.onlineshop.enteties.Order;
@@ -53,6 +52,6 @@ public class DefaultOrderManagementService implements OrderManagementService {
 	}
 
 	void clearServiceState() {
-		orders = new ArrayList<Order>();
+		orders.clear();
 	}
 }

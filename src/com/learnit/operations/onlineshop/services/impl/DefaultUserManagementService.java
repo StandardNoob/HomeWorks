@@ -1,10 +1,8 @@
 package com.learnit.operations.onlineshop.services.impl;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import com.learnit.operations.onlineshop.enteties.Order;
 import com.learnit.operations.onlineshop.enteties.User;
 import com.learnit.operations.onlineshop.services.UserManagementService;
 
@@ -79,6 +77,6 @@ public class DefaultUserManagementService implements UserManagementService {
 	}
 
 	void clearServiceState() {
-		users = new ArrayList<User>();
+		users.clear();
 	}
 }

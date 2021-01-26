@@ -62,7 +62,7 @@ public class DefaultUser implements User {
 
 	@Override
 	public void setEmail(String newEmail) {
-		if (email == null) {
+		if (newEmail == null) {
 			return;
 		}
 		this.email = newEmail;
