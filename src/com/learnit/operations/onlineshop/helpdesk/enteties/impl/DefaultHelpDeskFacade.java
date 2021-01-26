@@ -1,11 +1,11 @@
-package com.learnit.operations.onlineshop.helpdesk.impl;
+package com.learnit.operations.onlineshop.helpdesk.enteties.impl;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
 import com.learnit.operations.onlineshop.helpdesk.enteties.HelpDeskFacade;
 import com.learnit.operations.onlineshop.helpdesk.enteties.SupportTicket;
 
-public class DefaultHelpDeskFacade<T> implements HelpDeskFacade {
+public class DefaultHelpDeskFacade implements HelpDeskFacade {
 
 	private Queue<SupportTicket> listOfTickets;
 
