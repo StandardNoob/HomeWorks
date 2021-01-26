@@ -37,7 +37,7 @@ class DefaultCartTest {
 	}
 
 	@Test
-	void shouldDontAddProductWhenProductIsNull() {
+	void shouldReturnAllProductsFromCart() {
 		Product product = new DefaultProduct();
 		Product product2 = new DefaultProduct();
 		Product product3 = new DefaultProduct();
@@ -52,7 +52,7 @@ class DefaultCartTest {
 	}
 
 	@Test
-	void shouldReturnAllProductsFromCart() {
+	void shouldDontAddProductWhenProductIsNull() {
 		Product product = null;
 		instance.addProduct(product);
 		assertEquals(instance.getProducts().size(), 0);
