@@ -26,12 +26,13 @@ class DefaultUserManagementServiceTest {
 	}
 
 	@Test
-	void shouldDontAddUserWhenRegisterUserNull() {
+	void shouldDontRegisterUserWhenRegisterUserNull() {
+		instance.registerUser(null);
 		assertEquals(instance.getUsers().size(), 0);
 	}
 
 	@Test
-	void shouldDontAddUserWhenRegisterUserNullCheckEmptyMessege() {
+	void shouldDontRegisterUserUserWhenRegisterUserNullCheckEmptyMessege() {
 		assertEquals(instance.registerUser(null), NO_ERROR_MESSAGE);
 	}
 
