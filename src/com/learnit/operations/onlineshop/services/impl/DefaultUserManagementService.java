@@ -34,6 +34,13 @@ public class DefaultUserManagementService implements UserManagementService {
 		}
 		users.add(user);
 		return NO_ERROR_MESSAGE;
+		
+//		"INSERT INTO users (first_name, last_name, password, email, role_id) VALUES(?,?,?,?,?)";		
+//		(1, user.getFirstName());
+//		(2, user.getLastName());
+//		(3, user.getPassword());
+//		(4, user.getEmail());
+//		(5, "SELECT role_id FROM roles WHERE role_name = 'default_user'");
 	}
 
 	private String checkUniqueEmail(String email) {
@@ -46,6 +53,8 @@ public class DefaultUserManagementService implements UserManagementService {
 			}
 		}
 		return NO_ERROR_MESSAGE;
+//		SELECT first_name, last_name FROM users WHERE email = ?;
+//		(1, email);
 	}
 
 	public static UserManagementService getInstance() {
@@ -64,6 +73,7 @@ public class DefaultUserManagementService implements UserManagementService {
 			}
 		}
 		return newlist;
+		//SELECT * FROM users
 	}
 
 	@Override
@@ -74,9 +84,12 @@ public class DefaultUserManagementService implements UserManagementService {
 			}
 		}
 		return null;
+//		//SELECT * FROM users WHERE email = ?;
+//		(1, user.getEmail());
 	}
 
 	void clearServiceState() {
 		users.clear();
+//		TRUNCATE TABLE users;
 	}
 }

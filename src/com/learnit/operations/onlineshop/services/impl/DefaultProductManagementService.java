@@ -30,6 +30,8 @@ public class DefaultProductManagementService implements ProductManagementService
 		products.add(new DefaultProduct(9, "Wienerberger Terca Engineering Brick Blue Perforated Class B 65mm (Pack of 400)", "Bricks", 659.99));		
 		products.add(new DefaultProduct(10, "Wienerberger Engineering Brick Red Smooth Class B 73mm - Pack of 368", "Bricks",523.99));
 		
+//		SELECT * FROM products p JOIN product_categories c ON p.product_id = c.category_id;
+//		SELECT * FROM products;
 	}
 
 	private DefaultProductManagementService() {
@@ -46,6 +48,7 @@ public class DefaultProductManagementService implements ProductManagementService
 	@Override
 	public List<Product> getProducts() {
 		return this.products;
+//		SELECT * FROM products;
 	}
 
 	@Override
@@ -56,5 +59,14 @@ public class DefaultProductManagementService implements ProductManagementService
 			}
 		}
 		return null;
+//		SELECT * FROM products WHERE product_id = ?;
+//		(1, productIdToAddToCart);
+	}
+	
+	public void addProductToDB(Product product) {
+//		"INSERT INTO products (productName, price, category_id) VALUES(?,?,?)"
+//		(1,product.getProductName());
+//		(2, product.getPrice());
+//		(3, "SELECT DICTINCT category_id FROM product_categories WHERE category_name = product.getCategoryName()");		
 	}
 }

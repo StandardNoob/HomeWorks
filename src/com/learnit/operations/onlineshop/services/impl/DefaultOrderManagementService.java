@@ -26,7 +26,10 @@ public class DefaultOrderManagementService implements OrderManagementService {
 	public void addOrder(Order order) {				
 		if (order != null) {
 			orders.add(order);
-		}		
+		}
+//      "INSERT INTO orders (customer_id, credit_card_number) VALUES (?,?)";
+//      (1, order.getCustomerId());
+//      (2, order.getCreditCardNumber());
 	}
 
 	@Override
@@ -38,6 +41,8 @@ public class DefaultOrderManagementService implements OrderManagementService {
 			}
 		}		
 		return newList;
+//		"SELECT * FROM orders WHERE customer_id = ?";
+//		(1, userId);
 	}
 
 	@Override
@@ -49,9 +54,11 @@ public class DefaultOrderManagementService implements OrderManagementService {
 			}
 		}		
 		return newlist;
+//		"SELECT * FROM orders";
 	}
 
 	void clearServiceState() {
 		orders.clear();
+//		TRUNCATE TABLE orders;
 	}
 }
