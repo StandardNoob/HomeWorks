@@ -12,7 +12,7 @@ import com.learnit.operations.onlineshop.enteties.impl.DefaultUser;
 
 public class TestDBConnection {
 
-	private static final String DB_URL = "jdbc:mysql://192.168.1.206:3306/online_shop";
+	private static final String DB_URL = "jdbc:mysql://localhost:3306/online_shop";
 	private static final String DB_USER = "root";
 	private static final String DB_PASSWORD = "root";
 	private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -25,7 +25,7 @@ public class TestDBConnection {
 
 //		insertUserIntoDB(user);
 //		updateUserInDb(user, "first_name", "Vova");
-		getAllUsersFromDB();
+//		getAllUsersFromDB();
 //		getUserByID(5);
 //		deleteUserByEmail("email.com");
 
