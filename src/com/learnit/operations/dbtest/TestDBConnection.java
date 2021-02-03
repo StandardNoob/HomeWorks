@@ -1,4 +1,4 @@
-package com.learnit.operations.onlineshop.db;
+package com.learnit.operations.dbtest;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
