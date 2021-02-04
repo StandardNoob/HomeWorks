@@ -8,7 +8,8 @@ import com.learnit.operations.onlineshop.enteties.Product;
 public class DefaultOrder implements Order {
 
 	private static final int AMOUNT_OF_DIGITS_IN_CREDIT_CARD_NUMBER = 16;
-
+	
+	private int orderId;
 	private String creditCardNumber;
 	private List<Product> products;
 	private int customerId;
@@ -47,5 +48,20 @@ public class DefaultOrder implements Order {
 	public String toString() {
 		return "Order for cardholder number= " + this.creditCardNumber + ", Products= " + products.toString();
 	}
+
+	public String getCreditCardNumber() {
+		return creditCardNumber;
+	}
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+	
+
+	
 
 }

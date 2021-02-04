@@ -1,17 +1,30 @@
 package com.learnit.operations.onlineshop.dao;
 
 import java.util.List;
-
-import com.learnit.operations.onlineshop.dao.models.UserModel;
+import com.learnit.operations.onlineshop.enteties.User;
 
 public interface UserDao {
+	
+	boolean registerUser(User user);
+	
+	boolean checkUniqueEmail(String email);
+	
+	List<User> getUsers();
+	
+	User getUserByEmail(String email);
 
-	UserModel getUserByID(int id);
-
-	List<UserModel> getAllUsers();
-
-	boolean saveUser(UserModel user);
-
-	boolean updateUser(UserModel user);
+	User getUserByID(int id);	
+	
+	boolean changeEmail(User user, String newEmail);
+	
+	boolean changePassword(User user, String newPassword);
+	
+	boolean changeFirstName(User user, String newFirstName);
+	
+	boolean changeLastName(User user, String newLastName);
+	
+	boolean deleteUser(User user);
+	
+	boolean deleteAllUsers();
 
 }

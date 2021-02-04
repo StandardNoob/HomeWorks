@@ -1,4 +1,4 @@
-package com.learnit.operations.onlineshop.dao.impl;
+package com.learnit.operations.onlineshop.dao.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

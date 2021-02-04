@@ -16,4 +16,6 @@ public interface User {
 
 	void setEmail(String newEmail);
 
+	UserRole getRole();
+
 }

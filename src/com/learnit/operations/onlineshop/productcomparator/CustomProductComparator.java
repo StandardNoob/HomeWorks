@@ -9,7 +9,7 @@ public class CustomProductComparator implements Comparator<Product> {
 	@Override
 	public int compare(Product o1, Product o2) {
 		int compareInt = 0;
-		compareInt = o1.getCategoryName().compareTo(o2.getCategoryName());
+		compareInt = o1.getCategory().getCategoryName().compareTo(o2.getCategory().getCategoryName());
 		if (compareInt == 0) {
 			double priceDif = o1.getPrice() - o2.getPrice();
 			if (priceDif < 0) {

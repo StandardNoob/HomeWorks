@@ -6,7 +6,9 @@ public interface Product {
 
 	String getProductName();
 
-	String getCategoryName();
+	ProductCategory getCategory();
+	
+	void setCategory(ProductCategory category);
 	
 	double getPrice();
 	

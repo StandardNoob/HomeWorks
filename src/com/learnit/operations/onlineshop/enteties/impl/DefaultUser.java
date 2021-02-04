@@ -1,5 +1,6 @@
 package com.learnit.operations.onlineshop.enteties.impl;
 
+import com.learnit.operations.onlineshop.enteties.UserRole;
 import com.learnit.operations.onlineshop.enteties.User;
 
 public class DefaultUser implements User {
@@ -9,6 +10,7 @@ public class DefaultUser implements User {
 	private String lastName;
 	private String password;
 	private String email;
+	private UserRole role;
 
 	private static int userCounter = 0;
 
@@ -73,7 +75,28 @@ public class DefaultUser implements User {
 		return this.id;
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	void clearState() {
 		userCounter = 0;
 	}
+
+	public UserRole getRole() {
+		return role;
+	}
+
+	public void setRole() {
+		this.role = new DefaultUserRole("default_user");
+	}
+
 }
