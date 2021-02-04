@@ -7,7 +7,7 @@ import com.learnit.operations.onlineshop.enteties.Order;
 import com.learnit.operations.onlineshop.services.OrderManagementService;
 
 public class DefaultOrderManagementService implements OrderManagementService {
-	
+
 	private static DefaultOrderManagementService instance;
 	private List<Order> orders;
 
@@ -23,13 +23,10 @@ public class DefaultOrderManagementService implements OrderManagementService {
 	}
 
 	@Override
-	public void addOrder(Order order) {				
+	public void addOrder(Order order) {
 		if (order != null) {
 			orders.add(order);
 		}
-//      "INSERT INTO orders (customer_id, credit_card_number) VALUES (?,?)";
-//      (1, order.getCustomerId());
-//      (2, order.getCreditCardNumber());
 	}
 
 	@Override
@@ -39,26 +36,22 @@ public class DefaultOrderManagementService implements OrderManagementService {
 			if (order != null && order.getCustomerId() == userId) {
 				newList.add(order);
 			}
-		}		
+		}
 		return newList;
-//		"SELECT * FROM orders WHERE customer_id = ?";
-//		(1, userId);
 	}
 
 	@Override
-	public List<Order> getOrders() {		
+	public List<Order> getOrders() {
 		ArrayList<Order> newlist = new ArrayList<>();
 		for (Order order : orders) {
 			if (order != null) {
 				newlist.add(order);
 			}
-		}		
+		}
 		return newlist;
-//		"SELECT * FROM orders";
 	}
 
 	void clearServiceState() {
 		orders.clear();
-//		TRUNCATE TABLE orders;
 	}
 }

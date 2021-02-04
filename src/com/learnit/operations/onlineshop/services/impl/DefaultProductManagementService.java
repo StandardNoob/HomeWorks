@@ -3,7 +3,10 @@ package com.learnit.operations.onlineshop.services.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.learnit.operations.onlineshop.enteties.ProductCategory;
+import com.learnit.operations.onlineshop.enteties.Manufacture;
 import com.learnit.operations.onlineshop.enteties.Product;
+import com.learnit.operations.onlineshop.enteties.impl.DefaultProductCategory;
 import com.learnit.operations.onlineshop.enteties.impl.DefaultProduct;
 import com.learnit.operations.onlineshop.services.ProductManagementService;
 
@@ -18,24 +21,33 @@ public class DefaultProductManagementService implements ProductManagementService
 	}
 
 	private static void initProducts() {
+
 		products = new ArrayList<Product>();
-		products.add(new DefaultProduct(1, "Hardwood Oak Suffolk Internal Door", "Doors", 109.99));
-		products.add(new DefaultProduct(2, "Oregon Cottage Interior Oak Door", "Doors", 179.99));
-		products.add(new DefaultProduct(3, "Oregon Cottage Horizontal Interior White Oak Door", "Doors", 189.99));
-		products.add(new DefaultProduct(4, "4 Panel Oak Deco Interior Door", "Doors", 209.09));
-		products.add(new DefaultProduct(5, "Worcester 2000 30kW Ng Combi Boiler Includes Free Comfort+ II controller", "Boilers", 989.99));
-		products.add(new DefaultProduct(6, "Glow-worm Betacom 4 30kW Combi Gas Boiler ERP", "Boilers", 787.99));
-		products.add(new DefaultProduct(7, "Worcester 2000 25kW Ng Combi Boiler with Free Comfort+ II controller", "Boilers", 859.99));
-		products.add(new DefaultProduct(8, "Wienerberger Terca Class B Engineering Brick Red 215mm x 102.5mm x 65mm (Pack of 504)", "Bricks", 402.99));
-		products.add(new DefaultProduct(9, "Wienerberger Terca Engineering Brick Blue Perforated Class B 65mm (Pack of 400)", "Bricks", 659.99));		
-		products.add(new DefaultProduct(10, "Wienerberger Engineering Brick Red Smooth Class B 73mm - Pack of 368", "Bricks",523.99));
-		
-//		SELECT * FROM products p JOIN product_categories c ON p.product_id = c.category_id;
-//		SELECT * FROM products;
+		products.add(new DefaultProduct(1, "Hardwood Oak Suffolk Internal Door",
+				new DefaultProductCategory("Doors", new ArrayList<Manufacture>()), 109.99));
+		products.add(new DefaultProduct(2, "Oregon Cottage Interior Oak Door",
+				new DefaultProductCategory("Doors", new ArrayList<Manufacture>()), 179.99));
+		products.add(new DefaultProduct(3, "Oregon Cottage Horizontal Interior White Oak Door",
+				new DefaultProductCategory("Doors", new ArrayList<Manufacture>()), 189.99));
+		products.add(new DefaultProduct(4, "4 Panel Oak Deco Interior Door",
+				new DefaultProductCategory("Doors", new ArrayList<Manufacture>()), 209.09));
+		products.add(new DefaultProduct(5, "Worcester 2000 30kW Ng Combi Boiler Includes Free Comfort+ II controller",
+				new DefaultProductCategory("Boilers", new ArrayList<Manufacture>()), 989.99));
+		products.add(new DefaultProduct(6, "Glow-worm Betacom 4 30kW Combi Gas Boiler ERP",
+				new DefaultProductCategory("Boilers", new ArrayList<Manufacture>()), 787.99));
+		products.add(new DefaultProduct(7, "Worcester 2000 25kW Ng Combi Boiler with Free Comfort+ II controller",
+				new DefaultProductCategory("Boilers", new ArrayList<Manufacture>()), 859.99));
+		products.add(new DefaultProduct(8,
+				"Wienerberger Terca Class B Engineering Brick Red 215mm x 102.5mm x 65mm (Pack of 504)",
+				new DefaultProductCategory("Bricks", new ArrayList<Manufacture>()), 402.99));
+		products.add(
+				new DefaultProduct(9, "Wienerberger Terca Engineering Brick Blue Perforated Class B 65mm (Pack of 400)",
+						new DefaultProductCategory("Bricks", new ArrayList<Manufacture>()), 659.99));
+		products.add(new DefaultProduct(10, "Wienerberger Engineering Brick Red Smooth Class B 73mm - Pack of 368",
+				new DefaultProductCategory("Bricks", new ArrayList<Manufacture>()), 523.99));
 	}
 
 	private DefaultProductManagementService() {
-
 	}
 
 	public static ProductManagementService getInstance() {
@@ -48,7 +60,6 @@ public class DefaultProductManagementService implements ProductManagementService
 	@Override
 	public List<Product> getProducts() {
 		return this.products;
-//		SELECT * FROM products;
 	}
 
 	@Override
@@ -59,14 +70,8 @@ public class DefaultProductManagementService implements ProductManagementService
 			}
 		}
 		return null;
-//		SELECT * FROM products WHERE product_id = ?;
-//		(1, productIdToAddToCart);
 	}
-	
+
 	public void addProductToDB(Product product) {
-//		"INSERT INTO products (productName, price, category_id) VALUES(?,?,?)"
-//		(1,product.getProductName());
-//		(2, product.getPrice());
-//		(3, "SELECT DICTINCT category_id FROM product_categories WHERE category_name = product.getCategoryName()");		
 	}
 }

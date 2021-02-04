@@ -13,5 +13,12 @@ public interface Order {
 	void setCustomerId(int customerId);
 
 	int getCustomerId();
+	
+	String getCreditCardNumber();
+	
+	int getOrderId();
+	
+	void setOrderId(int orderId);
+	
 
 }
