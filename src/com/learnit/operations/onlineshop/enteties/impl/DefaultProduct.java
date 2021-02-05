@@ -13,16 +13,6 @@ public class DefaultProduct implements Product {
 	public DefaultProduct() {
 	}
 
-	public DefaultProduct(int id, String productName, ProductCategory category, double price) {
-		super();
-		this.id = id;
-		this.productName = productName;
-		this.price = price;
-		this.category = category;
-	}
-	
-	
-
 	public DefaultProduct(int id, String productName, double price) {
 		super();
 		this.id = id;
@@ -30,16 +20,18 @@ public class DefaultProduct implements Product {
 		this.price = price;
 	}
 
-	@Override
-	public String toString() {
-		return "Product: id= " + this.id + ", Product Name= " + this.productName + ", Category Name= " + category.getCategoryName() + ", Price= "
-				+ this.price;
+	public DefaultProduct(int id, String productName, ProductCategory category, double price) {
+		super();
+		this.id = id;
+		this.productName = productName;
+		this.price = price;
+		this.category = category;
 	}
 
 	@Override
 	public int getId() {
 		return this.id;
-	}	
+	}
 
 	public void setId(int id) {
 		this.id = id;
@@ -70,6 +62,11 @@ public class DefaultProduct implements Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Product: id= " + this.id + ", Product Name= " + this.productName + ", Category Name= "
+				+ category.getCategoryName() + ", Price= " + this.price;
+	}
 
 }

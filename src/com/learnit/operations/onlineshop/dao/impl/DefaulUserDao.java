@@ -28,7 +28,6 @@ public class DefaulUserDao implements UserDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 		return false;
 	}
 
@@ -192,5 +191,4 @@ public class DefaulUserDao implements UserDao {
 		}
 		return false;
 	}
-
 }

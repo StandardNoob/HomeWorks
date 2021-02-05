@@ -6,31 +6,31 @@ import com.learnit.operations.onlineshop.enteties.impl.DefaultCart;
 import com.learnit.operations.onlineshop.menu.Menu;
 
 public class ApplicationContext {
-	
+
 	private static ApplicationContext instance;
-	
+
 	private User loggedInUser;
 	private Menu mainMenu;
 	private Cart sessionCart;
-	
+
 	private ApplicationContext() {
 	}
-	
+
 	public void setLoggedInUser(User user) {
 		if (this.sessionCart != null) {
 			this.sessionCart.clear();
 		}
 		this.loggedInUser = user;
 	}
-	
+
 	public User getLoggedInUser() {
 		return this.loggedInUser;
 	}
-	
+
 	public void setMainMenu(Menu menu) {
 		this.mainMenu = menu;
 	}
-	
+
 	public Menu getMainMenu() {
 		return this.mainMenu;
 	}
@@ -48,5 +48,4 @@ public class ApplicationContext {
 		}
 		return this.sessionCart;
 	}
-
 }

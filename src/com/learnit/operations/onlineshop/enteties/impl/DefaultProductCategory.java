@@ -15,15 +15,15 @@ public class DefaultProductCategory implements ProductCategory {
 		super();
 	}
 
-	public DefaultProductCategory(int categoryId, String categoryName, List<Manufacture> manufacture) {
+	public DefaultProductCategory(String categoryName, List<Manufacture> manufacture) {
 		super();
-		this.categoryId = categoryId;
 		this.categoryName = categoryName;
 		this.manufacture = manufacture;
 	}
 
-	public DefaultProductCategory(String categoryName, List<Manufacture> manufacture) {
+	public DefaultProductCategory(int categoryId, String categoryName, List<Manufacture> manufacture) {
 		super();
+		this.categoryId = categoryId;
 		this.categoryName = categoryName;
 		this.manufacture = manufacture;
 	}
@@ -54,19 +54,16 @@ public class DefaultProductCategory implements ProductCategory {
 
 	@Override
 	public boolean addCategory(ProductCategory category) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean deleteCategory(ProductCategory category) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public String getCategoryNameById(int id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

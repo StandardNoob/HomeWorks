@@ -98,5 +98,4 @@ public class DefaultUser implements User {
 	public void setRole() {
 		this.role = new DefaultUserRole("default_user");
 	}
-
 }

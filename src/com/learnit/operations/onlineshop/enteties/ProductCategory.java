@@ -13,11 +13,11 @@ public interface ProductCategory {
 	String getCategoryName();
 
 	int getCategoryId();
-	
+
 	void setCategoryId(int categoryId);
 
-	List<Manufacture> getManufacture();
-
 	void setManufacture(List<Manufacture> manufacture);
+
+	List<Manufacture> getManufacture();
 
 }

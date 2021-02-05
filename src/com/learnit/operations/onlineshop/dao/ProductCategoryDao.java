@@ -11,15 +11,15 @@ public interface ProductCategoryDao {
 
 	boolean deleteCategory(ProductCategory category);
 
+	boolean deleteAllCategories();
+
 	String getCategoryNameById(int id);
 
 	int getIdByCategoryName(String name);
 
-	List<ProductCategory> getAllCategory();
-
 	ProductCategory getCategoryById(int id);
 
-	boolean deleteAllCategories();
+	List<ProductCategory> getAllCategory();
 
 	List<Manufacture> getAllManufactureForCategory(int categoryId);
 

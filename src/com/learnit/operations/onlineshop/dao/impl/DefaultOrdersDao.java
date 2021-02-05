@@ -45,7 +45,6 @@ public class DefaultOrdersDao implements OrdersDao {
 					order.setCreditCardNumber(rs.getString("credit_card_number"));
 					order.setProducts(new DefaultProductsDao().getProductsByOrderId(order));
 					listOfOrdersForUser.add(order);
-
 				}
 			}
 		} catch (SQLException e) {
@@ -66,7 +65,6 @@ public class DefaultOrdersDao implements OrdersDao {
 					order.setCreditCardNumber(rs.getString("credit_card_number"));
 					order.setProducts(new DefaultProductsDao().getProductsByOrderId(order));
 					listOfOrders.add(order);
-
 				}
 			}
 		} catch (SQLException e) {
@@ -104,5 +102,4 @@ public class DefaultOrdersDao implements OrdersDao {
 		}
 		return false;
 	}
-
 }
