@@ -27,7 +27,9 @@ public class DefaultProductsDao implements ProductsDao {
 					product.setId(rs.getInt("product_id"));
 					product.setProductName(rs.getString("product_name"));
 					product.setPrice(rs.getDouble("price"));
-					product.setCategory(new DefaultProductCategory(rs.getInt("category_id"),rs.getString("category_name"), new DefaultManufactureDao().getAllManufactureForCategory(rs.getInt("category_id")) ));
+					product.setCategory(new DefaultProductCategory(rs.getInt("category_id"),
+							rs.getString("category_name"),
+							new DefaultManufactureDao().getAllManufactureForCategory(rs.getInt("category_id"))));
 					listOfProducts.add(product);
 				}
 			}
@@ -149,5 +151,4 @@ public class DefaultProductsDao implements ProductsDao {
 		}
 		return listOfProducts;
 	}
-
 }

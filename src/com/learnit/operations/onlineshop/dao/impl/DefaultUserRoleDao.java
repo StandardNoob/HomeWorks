@@ -119,7 +119,5 @@ public class DefaultUserRoleDao implements UserRoleDao {
 			e.printStackTrace();
 		}
 		return false;
-
 	}
-
 }

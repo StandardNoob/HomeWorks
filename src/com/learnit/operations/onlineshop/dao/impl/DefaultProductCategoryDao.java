@@ -131,7 +131,7 @@ public class DefaultProductCategoryDao implements ProductCategoryDao {
 		try (var conn = DbUtils.getConnection();
 				PreparedStatement ps = conn.prepareStatement(
 						"SELECT distinct * FROM categories_munufacturers cm JOIN categories c ON cm.category_id = c.category_id "
-						+ "JOIN manufacturers m ON m.manufacturers_id = cm.manufacturers_id")) {
+								+ "JOIN manufacturers m ON m.manufacturers_id = cm.manufacturers_id")) {
 			try (ResultSet rs = ps.executeQuery()) {
 				while (rs.next()) {
 					if (categoryId == rs.getInt("category_id")) {

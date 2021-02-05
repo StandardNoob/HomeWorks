@@ -11,6 +11,15 @@ public class DefaultManufacture implements Manufacture {
 	private String manufactureName;
 	private List<ProductCategory> listOfProductCategory;
 
+	public DefaultManufacture() {
+	}
+
+	public DefaultManufacture(int manufactureId, String manufactureName, List<ProductCategory> listOfProductCategory) {
+		this.manufactureId = manufactureId;
+		this.manufactureName = manufactureName;
+		this.listOfProductCategory = listOfProductCategory;
+	}
+
 	public List<ProductCategory> getListOfProductCategory() {
 		return listOfProductCategory;
 	}
@@ -19,16 +28,7 @@ public class DefaultManufacture implements Manufacture {
 		this.listOfProductCategory = listOfProductCategory;
 	}
 
-	public DefaultManufacture() {
-	}	
-
-	public DefaultManufacture(int manufactureId, String manufactureName, List<ProductCategory> listOfProductCategory) {		
-		this.manufactureId = manufactureId;
-		this.manufactureName = manufactureName;
-		this.listOfProductCategory = listOfProductCategory;
-	}
-
-	public DefaultManufacture(String manufactureName) {		
+	public DefaultManufacture(String manufactureName) {
 		this.manufactureName = manufactureName;
 	}
 
@@ -50,13 +50,11 @@ public class DefaultManufacture implements Manufacture {
 
 	@Override
 	public boolean addCategory(Manufacture manufacture) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean deleteCategory(Manufacture manufacture) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -64,6 +62,5 @@ public class DefaultManufacture implements Manufacture {
 	public String toString() {
 		return "DefaultManufacture [manufactureId=" + manufactureId + ", manufactureName=" + manufactureName + "]";
 	}
-	
 
 }

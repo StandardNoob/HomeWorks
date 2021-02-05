@@ -174,5 +174,4 @@ public class DefaultManufactureDao implements ManufactureDao {
 		}
 		return listOfProductCategoryForManufacture;
 	}
-
 }

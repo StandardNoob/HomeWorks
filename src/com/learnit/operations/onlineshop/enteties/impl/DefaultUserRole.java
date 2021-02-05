@@ -8,16 +8,13 @@ public class DefaultUserRole implements UserRole {
 	private String roleName;
 
 	public DefaultUserRole() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public DefaultUserRole(String roleName) {
-		super();
 		this.roleName = roleName;
-	}	
+	}
 
-	public DefaultUserRole(int roleId, String roleName) {		
+	public DefaultUserRole(int roleId, String roleName) {
 		this.roleId = roleId;
 		this.roleName = roleName;
 	}
@@ -40,25 +37,21 @@ public class DefaultUserRole implements UserRole {
 
 	@Override
 	public boolean addRole(UserRole role) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean deleteRole(UserRole role) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public String getRoleNameById(int id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public UserRole getRoleById(int id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

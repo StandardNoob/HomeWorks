@@ -31,7 +31,6 @@ public class DefaultCart implements Cart {
 			return;
 		}
 		products.add(product);
-
 	}
 
 	public List<Product> getProducts() {
@@ -47,5 +46,4 @@ public class DefaultCart implements Cart {
 	public void clear() {
 		products.clear();
 	}
-
 }
