@@ -1,6 +1,9 @@
 package com.learnit.operations.bookservice;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Demo {
 
@@ -19,8 +22,6 @@ public class Demo {
 						new Publisher(3, "Publisher_3"), 1992, 185, BigDecimal.valueOf(19.99), CoverType.PAPERBACK) };
 
 		Book[] booksVsFilter = bookService.filterBooksAfterSpecifiedYear(1992, books);
-		for (Book book : booksVsFilter) {
-			System.out.println(book);
-		}
+		Arrays.stream(booksVsFilter).forEach(System.out::println);		
 	}
 }
